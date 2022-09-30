@@ -1,0 +1,57 @@
+header {
+    background-image: linear-gradient(to right, rgb(70, 97, 255), rgb(36, 0, 128));
+    padding: 25px;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+}
+
+#search-section {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+
+}
+
+#input {
+    height: 50px;
+    width: 400px;
+    margin-left: 10px;
+}
+
+#search-button {
+    height: 50px;
+    width: 100px;
+    margin-left: 10px;
+    border-radius: 12px;
+    color: white;
+    background-color: rgb(70, 97, 255);
+}
+
+#results-section {
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    width: 80%;
+    height: 300px;
+    padding: 25px;
+    margin: auto;
+    border: black solid 2px;
+}
+
+#forecast-header{
+    text-align: center;
+    margin: 15px;
+}
+
+#forecast-cards {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    margin: 10px;
+
+}
