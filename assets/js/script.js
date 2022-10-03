@@ -14,13 +14,13 @@ function searchFunction() {
     localStorage.setItem("input", inputValue)
     currentWeather(inputValue)
     forecast(inputValue)
-    
+
 }
 
 searchButton.on('click', searchFunction)
 
 function currentWeather(input) {
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + input + "&units=imperial&appid=" + APIKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + input + "&units=imperial&appid=" + APIKey;
     fetch(queryURL)
         .then(response => response.json())
         .then(data => {
@@ -37,7 +37,7 @@ function currentWeather(input) {
 }
 
 function forecast(input) {
-    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + input + "&units=imperial&appid=" + APIKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + input + "&units=imperial&appid=" + APIKey;
     fetch(queryURL)
         .then(response => response.json())
         .then(data => {
