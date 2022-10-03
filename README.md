@@ -7,7 +7,7 @@ This application uses OpenWeather API to let a user search for a city and get up
 
 ## Screenshot
 
-
+![A user searches for a city by name and gets up to date weather information.](./Assets/images/screenshot.png)
 
 ## Link
 
