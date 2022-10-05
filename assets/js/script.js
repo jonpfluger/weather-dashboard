@@ -1,20 +1,28 @@
 var APIKey = 'dc4775af5ff7a953aa6df1dfbaf88aaf'
 var input = $('#input')
 var searchButton = $('#search-button')
-var card1 = $("#card1")
-var card2 = $("#card2")
-var card3 = $("#card3")
-var card4 = $("#card4")
-var card5 = $("#card5")
+var pastSearches = $('#past-searches')
+
+// local storage
+function getLocalStorage() {
+    var localInputStorage = localStorage.getItem("input")
+    var pastSearchEl = $("<p>").text(localInputStorage)
+    pastSearches.append(pastSearchEl)
+}
+
+getLocalStorage()
 
 // click listener to search button
 function searchFunction() {
     var inputValue = input.val()
     console.log(inputValue)
-    localStorage.setItem("input", inputValue)
     currentWeather(inputValue)
     forecast(inputValue)
-
+    localStorage.setItem("input", inputValue)
+    var localInputStorage = localStorage.getItem("input")
+    var pastSearchEl = $("<p>").text(localInputStorage)
+    pastSearches.append(pastSearchEl)
+    input.val("")
 }
 
 searchButton.on('click', searchFunction)
@@ -26,13 +34,20 @@ function currentWeather(input) {
         .then(data => {
             console.log(data)
             var cityName = data.name
+            var icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
             $("#city-name-results").text(cityName)
+            $('#weather-icon').attr("src", icon)
             var tempResults = "Temperature: " + Math.floor(data.main.temp) + "° F"
             $("#tempurature-results").text(tempResults)
             var windResults = "Wind Speed: " + Math.floor(data.wind.speed) + " MPH"
             $('#wind-results').text(windResults)
             var humidityResults = "Humidity: " + data.main.humidity + "%"
             $("#humidity-results").text(humidityResults)
+        })
+        .catch(error => {
+            console.log(error)
+            alert("Error 404: Not Found")
+            input.val("")
         })
 }
 
@@ -45,7 +60,9 @@ function forecast(input) {
             for (var i = 4; i < data.list.length; i += 8) {
                 var card = $('<div>').addClass('card col-2')
                 var dateCard = $('<h5>').addClass('card-header')
+                var icon = `https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}.png`
                 dateCard.text(moment.unix(data.list[i].dt).format("dddd"))
+                var cardIcons = $('<img>').attr("src", icon).addClass('card-img-icons')
                 var ul = $('<ul>').addClass('list-group list-group-flush')
                 var temp = $('<li>').addClass('list-group-item')
                 temp.text("Temp: " + Math.floor(data.list[i].main.temp) + "° F")
@@ -54,11 +71,8 @@ function forecast(input) {
                 var humidity = $('<li>').addClass('list-group-item')
                 humidity.text("Humidity: " + data.list[i].main.humidity + "%")
                 ul.append(temp, wind, humidity)
-                card.append(dateCard, ul)
+                card.append(dateCard, cardIcons, ul)
                 $('#forecast-cards').append(card)
             }
         })
 }
-
-
-

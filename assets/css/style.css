@@ -27,6 +27,14 @@ header {
     background-color: rgb(70, 97, 255);
 }
 
+#past-searches {
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+}
+
 #results-section {
     display: block;
     text-align: center;
@@ -50,5 +58,9 @@ header {
 
 .card {
     margin: 10px;
+}
 
+.card-img-icons {
+    height: 40px;
+    width: 40px;
 }
