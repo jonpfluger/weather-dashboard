@@ -35,7 +35,7 @@ function currentWeather(input) {
             console.log(data)
             var cityName = data.name
             var icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
-            $("#city-name-results").text(cityName + " " + moment().format('mm/DD/YY'))
+            $("#city-name-results").text(cityName + " " + moment().format('MM/DD/YY'))
             $('#weather-icon').attr("src", icon)
             var tempResults = "Temperature: " + Math.floor(data.main.temp) + "° F"
             $("#tempurature-results").text(tempResults)
