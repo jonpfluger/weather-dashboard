@@ -5,8 +5,8 @@ var pastSearches = $('#past-searches')
 
 // local storage
 function getLocalStorage() {
-    var localInputStorage = localStorage.getItem("input")
-    var pastSearchEl = $("<p>").text(localInputStorage)
+    var localInputStorage = localStorage.getItem("input");
+    var pastSearchEl = $("<p>").text(localInputStorage);
     pastSearches.append(pastSearchEl)
 }
 
