@@ -1,15 +1,18 @@
 header {
     background-image: linear-gradient(to right, rgb(70, 97, 255), rgb(36, 0, 128));
-    padding: 25px;
+    padding: 5px;
     text-align: center;
     color: white;
+}
+
+main {
+    display: flex;
 }
 
 #search-section {
     display: flex;
     justify-content: center;
     margin: 15px;
-
 }
 
 #input {
@@ -18,7 +21,7 @@ header {
     margin-left: 10px;
 }
 
-#search-button {
+button {
     height: 50px;
     width: 100px;
     margin-left: 10px;

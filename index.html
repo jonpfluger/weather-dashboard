@@ -15,27 +15,44 @@
         <p>🌲Created by Jon Pfluger🌲</p>
     </header>
 
-    <div id="search-section">
+    <main>
+        <section id="search-section">
+            <h2>Search for a city:</h2>
+            <form id="form">
+                <input type="text" id="input" type="search" placeholder="City name">
+                <button id="search-button" type="submit">Search</button>
+                <button id="clear-button" type="submit">Clear History</button>
+            </form>
+            <div id="past-searches"></div>
+        </section>
+
+        <section id="results-section">
+            <div id="current-weather"></div>
+            <div id="forecast"></div>
+        </section>
+    </main>
+
+    <!-- <div id="search-section">
         <h2>Search for a city:</h2>
         <input type="text" id="input">
         <button id="search-button">Search</button>
-    </div>
+    </div> -->
 
-    <div id="past-searches">
+    <!-- <div id="past-searches">
         <p>Previous Searches:</p>
-    </div>
+    </div> -->
 
-    <div id="results-section">
+    <!-- <div id="results-section">
         <h3 id="city-name-results"></h3>
         <img id="weather-icon"/>
         <p id="tempurature-results"></p>
         <p id="wind-results"></p>
         <p id="humidity-results"></p>
-    </div>
+    </div> -->
     
-    <h4 id="forecast-header">5-Day Forecast</h4>
+    <!-- <h4 id="forecast-header">5-Day Forecast</h4>
   
-    <div id="forecast-cards"></div>
+    <div id="forecast-cards"></div> -->
 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
