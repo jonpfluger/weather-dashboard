@@ -1,3 +1,8 @@
+* {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
 header {
     background-image: linear-gradient(to right, rgb(70, 97, 255), rgb(36, 0, 128));
     padding: 5px;
@@ -9,33 +14,42 @@ main {
     display: flex;
 }
 
-#search-section {
-    display: flex;
-    justify-content: center;
-    margin: 15px;
-}
-
-#input {
+input {
     height: 50px;
-    width: 400px;
-    margin-left: 10px;
+    width: 100%;
 }
 
 button {
     height: 50px;
-    width: 100px;
-    margin-left: 10px;
+    width: 100%;
+    margin-top: 5px; 
     border-radius: 12px;
     color: white;
     background-color: rgb(70, 97, 255);
 }
 
-#past-searches {
-    text-align: center;
+#search-section {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    padding: 5px;
+    border: 1px solid red;
 }
 
-p {
-    font-size: 18px;
+#results-section {
+    flex: 2 1 0;
+    padding: 5px;
+    border: 1px solid red;
+}
+
+#forecast {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/* #past-searches {
+    text-align: center;
 }
 
 #results-section {
@@ -66,4 +80,4 @@ p {
 .card-img-icons {   
     height: 40px;
     width: 40px;
-}
+} */
