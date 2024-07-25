@@ -1,6 +1,7 @@
 var APIKey = 'dc4775af5ff7a953aa6df1dfbaf88aaf'
 var input = $('#input')
 var searchButton = $('#search-button')
+var clearButton = $('#clear-button')
 var pastSearches = $('#past-searches')
 
 // local storage
@@ -25,7 +26,7 @@ function searchFunction() {
     input.val("")
 }
 
-searchButton.on('click', searchFunction)
+// searchButton.on('click', searchFunction)
 
 function currentWeather(input) {
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + input + "&units=imperial&appid=" + APIKey;
@@ -76,3 +77,11 @@ function forecast(input) {
             }
         })
 }
+
+function clearSearch(e) {
+    e.preventDefault()
+}
+
+// event listeners
+searchButton.on('click', searchFunction)
+clearButton.on('click', clearSearch)
